@@ -15,7 +15,7 @@ Analyse the time complexity of your implementation and give a $\Theta$ bound for
 its worst-case runtime. Add your answer, including your reasoning, to this
 markdown file.
 
-The worst case runtime complexity of this implementation of merge sort is Θ(n log n). The algorithm sorts in place by merging subarrays of increasing size. Each merging step requires O(n) time because elements are shifted rather than copied into an auxiliary array. Because the number of merging steps is O(log n), the overall time complexity would still be Θ(n log n). Also, the in place shifting results in a higher constant factor compared to other implementations that would use auxiliary arrays.
+The worst-case runtime complexity of this merge sort is Θ(n²). The algorithm sorts in place by merging subarrays that increase in size. Here, each merging step involves shifting elements instead of using a "helper" array. However, since the merge process contains a nested loop, the worst-case shift operation can take O(n) per element, leading to a total merge step complexity of O(n²) in the worst case. Because the number of merging steps is O(log n), the expected complexity might appear to be O(n log n). However, due to the nested loop structure in the merging process, the actual worst-case complexity is Θ(n²). This results in a slowdown compared to standard merge sort implementations that use "helper" arrays.
 
 (I had help of a friend that is a computer science student to analyse the time complexity, she help me answer some questions so that I could come up with this conclusion)
 
